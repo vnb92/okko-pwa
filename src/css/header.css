@@ -1,0 +1,46 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: calc(var(--base)*3);
+    max-height: min-content;
+}
+
+.slogan,
+.timer {
+    margin-top: calc(var(--base)*2);
+}
+
+.logo {
+    display: block;
+    min-width: calc(var(--base)*30);
+    max-width: calc(var(--base)*30);
+    fill: var(--color-white);
+}
+
+.slogan {
+    text-align: center;
+}
+
+.timer {
+    margin-top: calc(var(--base)*4);
+}
+
+@media (min-width: 768px) {
+    .header {
+        flex-direction: row;
+    }
+    
+    .slogan {
+        margin-left: calc(var(--base)*5);
+    }
+    
+    .slogan,
+    .timer {
+        margin-top: calc(var(--base)*2);
+    }
+
+    .timer {
+        margin-left: auto;
+    }
+}
