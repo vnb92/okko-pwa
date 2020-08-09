@@ -10,7 +10,7 @@ module.exports = env => ({
   devtool: `source-map`,
   entry: ['./src/js/index.js', './src/css/styles.css'],
   output: {
-    path: path.join(__dirname, 'build'),
+    path: path.join(__dirname, 'docs'),
     publicPath: '',
     filename: 'bundle.js',
   },

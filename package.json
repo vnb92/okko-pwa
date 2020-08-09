@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --open --hot --env.mode=development",
-    "start-sw": "http-server build --env.sw",
+    "start-sw": "http-server docs --env.sw",
     "build": "webpack --env.mode=production"
   },
   "author": "",

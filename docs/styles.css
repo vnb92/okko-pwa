@@ -1,0 +1,155 @@
+.body {
+    display: flex;
+    flex-direction: column;
+
+    min-height: 100vh;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    padding: calc(var(--base)*3);
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: calc(var(--base)*3);
+    max-height: min-content;
+}
+
+.slogan,
+.timer {
+    margin-top: calc(var(--base)*2);
+}
+
+.logo {
+    display: block;
+    min-width: calc(var(--base)*30);
+    max-width: calc(var(--base)*30);
+    fill: var(--color-white);
+}
+
+.slogan {
+    text-align: center;
+}
+
+.timer {
+    margin-top: calc(var(--base)*4);
+}
+
+@media (min-width: 768px) {
+    .header {
+        flex-direction: row;
+    }
+    
+    .slogan {
+        margin-left: calc(var(--base)*5);
+    }
+    
+    .slogan,
+    .timer {
+        margin-top: calc(var(--base)*2);
+    }
+
+    .timer {
+        margin-left: auto;
+    }
+}
+
+
+
+.description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    max-width: calc(var(--base)*100);
+    margin: 0 auto;
+    padding-bottom: calc(var(--base)*7);
+
+    border-bottom: 8px solid var(--color-purple);
+}
+
+.description__title {
+    margin-bottom: calc(var(--base)*3);
+}
+
+.description__text {
+    text-align: justify;
+    word-wrap: break-word;
+}
+
+.shedule {
+    display: flex;
+    flex-direction: column;
+    margin-top: calc(var(--base)*7);
+}
+
+.shedule__title,
+.shedule__talks {
+    margin: 0 auto;
+}
+
+.shedule__title {
+    margin-bottom: calc(var(--base)*7);
+}
+
+.talk {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    max-width: calc(var(--base)*100);
+    padding-top: calc(var(--base)*2);
+    margin-bottom: calc(var(--base)*8);
+
+    border-top: var(--base) solid transparent;
+    border-image: 100% 0 0 linear-gradient(90deg, var(--color-red), var(--color-red-dark) 10%, transparent 35%);
+
+    opacity: 0;
+    transform: translateY(-40px);
+
+    transition: transform 1s, opacity 1.1s;
+    transition-timing-function: cubic-bezier(0.37, 0.6, 0.22, 1.01);
+}
+
+.talk.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.talk__time,
+.talk__title {
+    margin-bottom: calc(var(--base)*2);
+}
+
+.talk__time {
+    font-size: var(--font-size-large);
+}
+
+.talk__title {
+    font-size: var(--font-size-large);
+    text-transform: uppercase;
+}
+
+.talk__description {
+    color: var(--color-white-smoke)
+}
+
+@media (min-width: 1024px) {
+    .talk__time {
+        position: absolute;
+        left: -8em;
+    }
+}
+
+
+
+
+
+
+/*# sourceMappingURL=styles.css.map*/

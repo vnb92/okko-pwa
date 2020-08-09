@@ -1,0 +1,1 @@
+const CACHE="cache-only";function fromCache(e){return caches.open(CACHE).then(t=>t.match(e).then(e=>e||Promise.reject("no-match")))}self.addEventListener("install",e=>{e.waitUntil(caches.open(CACHE).then(e=>e.addAll(["/","/bundle.js","/styles.css"])))}),self.addEventListener("activate",e=>{}),self.addEventListener("fetch",e=>{e.respondWith(fromCache(e.request))});
