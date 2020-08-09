@@ -2,7 +2,7 @@ export const DB = {
     talks: [
         {
             time: {
-                start: '02:00',
+                start: '10:15',
                 end: '11:00',
             },
             title: 'Переводим React-приложение на SSR, используя Next.js',
@@ -10,7 +10,7 @@ export const DB = {
         },
         {
             time: {
-                start: '11:10',
+                start: '11:15',
                 end: '12:00',
             },
             title: 'Алгоритмы на графах',
@@ -26,7 +26,7 @@ export const DB = {
         },
         {
             time: {
-                start: '14:10',
+                start: '14:15',
                 end: '15:00',
             },
             title: 'Протокол Chrome DevTools',
@@ -34,7 +34,7 @@ export const DB = {
         },
         {
             time: {
-                start: '15:10',
+                start: '15:15',
                 end: '16:00',
             },
             title: 'Обработка озера данных на Node.js в serverless-архитектуре',
