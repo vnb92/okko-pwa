@@ -7,6 +7,8 @@ self.addEventListener('install', (event) => {
         '/',
         '/index.js',
         '/styles.css',
+        '/manifest.json',
+        '/pwa-icon.png',
     ];
     
     const gitRepoPrefix = '/okko-pwa';

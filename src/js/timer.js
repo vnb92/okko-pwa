@@ -6,6 +6,7 @@ const UPDATE_TIMER_INTERVAL_MS = 1 * MS_INTO_MINUTE;
 const MIN_MINUTES_FOR_NOTIFICATION = 5;
 
 const timeNode = document.querySelector('.timer__time');
+const titleNode = document.querySelector('.timer__title');
 
 export const startTimer = () => {
     updateTimer();
@@ -28,19 +29,23 @@ function updateTimer() {
         const remainingTimeMs = startTalkTimeMs - currentTimeMs;
         const remainingMinutes = Math.ceil(remainingTimeMs / MS_INTO_MINUTE);
         
-        timeNode.textContent = `${remainingMinutes} мин.`;
-
-        if (isShowNotification) return;
-
-        if (remainingTimeMs < 1) {
-            isFindNearestTalk = false;
+        if (remainingMinutes > MIN_MINUTES_FOR_NOTIFICATION) {
             isShowNotification = false;
+        };
+
+        if (remainingMinutes <= 0) {
+            isFindNearestTalk = false;
+            titleNode.textContent = 'доклад закончен'
+            timeNode.textContent = '';
             return;
         };
 
+        titleNode.textContent = 'доклад через'
+        timeNode.textContent = `${remainingMinutes} мин.`;
+        
         isFindNearestTalk = true;
         
-        if (remainingMinutes <= MIN_MINUTES_FOR_NOTIFICATION) {
+        if (remainingMinutes <= MIN_MINUTES_FOR_NOTIFICATION && !isShowNotification) {
             showNotification({
                 minutes: remainingMinutes,
                 message: talk.title,

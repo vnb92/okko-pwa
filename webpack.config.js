@@ -16,12 +16,13 @@ module.exports = env => ({
   },
   output: {
     path: path.join(__dirname, 'docs'),
-    publicPath: '',
+    publicPath: env.mode === 'development' ? '/okko-pwa' : '',
     chunkFilename: '[name].js'
   },
   devServer: {
     contentBase: path.join(__dirname, 'src'),
     writeToDisk: env.sw ? true : false,
+    openPage: 'okko-pwa'
   },
   module: {
     rules: [
@@ -55,6 +56,9 @@ module.exports = env => ({
     new CopyPlugin({
       patterns: [
         { from: 'src/service-worker/service-worker.js', to: 'service-worker.js' },
+        { from: 'src/manifest.json', to: 'manifest.json' },
+        { from: 'src/img/favicon.ico', to: 'favicon.ico' },
+        { from: 'src/img/pwa-icon.png', to: 'pwa-icon.png' },
       ],
     }),
     new MiniCssExtractPlugin({
