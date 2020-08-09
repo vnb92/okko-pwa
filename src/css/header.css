@@ -2,8 +2,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: calc(var(--base)*3);
+
     max-height: min-content;
+
+    padding: calc(var(--base)*3);
+    padding-bottom: calc(var(--base)*2);
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .slogan,
@@ -11,10 +20,13 @@
     margin-top: calc(var(--base)*2);
 }
 
-.logo {
+.logo__svg {
     display: block;
     min-width: calc(var(--base)*30);
     max-width: calc(var(--base)*30);
+    min-height: calc(var(--base)*12);
+    max-height: calc(var(--base)*12);
+
     fill: var(--color-white);
 }
 
@@ -23,12 +35,21 @@
 }
 
 .timer {
-    margin-top: calc(var(--base)*4);
+    margin-top: calc(var(--base)*7);
+}
+
+.timer__time {
+    color: var(--color-red-dark);
 }
 
 @media (min-width: 768px) {
     .header {
         flex-direction: row;
+        align-items: flex-end;
+    }
+
+    .logo {
+        align-items: flex-start;
     }
     
     .slogan {

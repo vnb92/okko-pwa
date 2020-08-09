@@ -1,7 +1,7 @@
+@import './variables.css';
 @import './layout.css';
 @import './header.css';
 @import './timer.css';
-@import './logo.css';
 @import './description.css';
 @import './shedule.css';
-@import './scroll.css';
+@import './scrollbar.css';

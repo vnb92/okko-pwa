@@ -1,0 +1,8 @@
+*::-webkit-scrollbar {
+    width: 2px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--color-purple);
+    border-radius: 30px;
+}

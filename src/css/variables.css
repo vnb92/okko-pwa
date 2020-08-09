@@ -1,0 +1,17 @@
+:root {
+    --base: 5px;
+
+    --color-purple: #6c43bf;
+    --color-purple-dark: #1a082c;
+    --color-white: #e6e3e3;
+    --color-white-smoke: #d3d3d3;
+    --color-red: #c70404;
+    --color-red-dark: #8d0c0c;
+
+    --font-size-medium: 16px;
+    --font-size-large: 22px;
+    --font-size-largest: 35px;
+
+    --breakpoint-tablet: 768px;
+    --breakpoint-desktop: 1024px;
+}

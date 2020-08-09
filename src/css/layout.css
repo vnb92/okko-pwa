@@ -1,14 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .body {
     display: flex;
     flex-direction: column;
 
     min-height: 100vh;
+
+    background-color: var(--color-purple-dark);
+    color: var(--color-white);
+    font-family: 'Mulish', sans-serif;
+    font-size: var(--font-size-medium);
 }
 
 .main {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-
+    
     padding: calc(var(--base)*3);
+}
+
+h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: var(--font-size-largest);
+    font-weight: 500;
+    text-transform: uppercase;
 }

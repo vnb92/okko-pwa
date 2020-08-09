@@ -18,7 +18,7 @@ export const DB = {
         },
         {
             time: {
-                start: '13:00',
+                start: '13:10',
                 end: '14:00',
             },
             title: 'ApolloClient или Relay с фрагментами, «волосатый» GraphQL и TypeScript — всё, что нужно для правильного статического анализа React-приложения',

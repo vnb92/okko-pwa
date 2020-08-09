@@ -1,7 +1,7 @@
 export const notificationPermissionRequest = () => {
     Notification.requestPermission().then((permission) => {
         if (permission === 'denied') {
-            console.log('can send notifications');
+            alert('push-уведомления не работают, так как запрещены настройками');
         }
     });
 }
