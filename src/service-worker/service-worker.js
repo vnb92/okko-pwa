@@ -2,13 +2,18 @@ const CACHE = 'cache-only';
 
 self.addEventListener('install', (event) => {
     console.log('SW установлен');
+    
+    let cachedResourseUrls = [
+        '/',
+        '/index.js',
+        '/styles.css',
+    ];
+    
+    const gitRepoPrefix = '/okko-pwa';
+    cachedResourseUrls = cachedResourseUrls.map(url => `${gitRepoPrefix}${url}`);
 
     event.waitUntil(
-        caches.open(CACHE).then((cache) => cache.addAll([
-            '/okko-pwa/',
-            '/okko-pwa/bundle.js',
-            '/okko-pwa/styles.css',
-        ]))
+        caches.open(CACHE).then((cache) => cache.addAll(cachedResourseUrls))
     );
 });
 
@@ -18,7 +23,7 @@ self.addEventListener('activate', (event) => {
 
 self.addEventListener('fetch', (event) => {
     console.log('SW: происходит запрос на сервер');
-    event.respondWith(fromCache(event.request))
+    event.respondWith(fromCache(event.request));
 });
 
 function fromCache(request) {
