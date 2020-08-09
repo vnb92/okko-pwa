@@ -2,6 +2,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const path = require('path');
 
 module.exports = env => ({
@@ -15,6 +16,7 @@ module.exports = env => ({
   },
   devServer: {
     contentBase: path.join(__dirname, 'src'),
+    writeToDisk: env.sw ? true : false,
   },
   module: {
     rules: [
@@ -45,8 +47,13 @@ module.exports = env => ({
       filename: 'index.html',
       template: 'src/index.html',
     }),
+    new CopyPlugin({
+      patterns: [
+        { from: 'src/js/service-worker.js', to: 'service-worker.js' },
+      ],
+    }),
     new MiniCssExtractPlugin({
-      filename: env.mode === 'development' ? 'styles.css' : 'styles.[hash].css',
+      filename: 'styles.css',
     }),
   ],
   optimization: {

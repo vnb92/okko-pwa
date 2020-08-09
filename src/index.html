@@ -55,21 +55,6 @@
         </style>
 </head>
 <body class="body">
-    <template id="talk-template">
-        <li class="talk">
-            <div class="talk__time">
-                <span class="talk__time-start"></span>
-                <span class="talk__time-separator"></span>
-                <span class="talk__time-end"></span>
-            </div>
-    
-            <div class="talk__body">
-                <h3 class="talk__title"></h3>
-                <p class="talk__description"></p>
-            </div>
-        </li>
-    </template>
-
     <header class="header">
         <div class="logo">
             <svg viewBox="0 0 137 50">
@@ -80,8 +65,8 @@
         <span class="slogan">Конференция для frontend-разработчиков</span>
 
         <div class="timer">
-            <span>ближайший доклад через</span>
-            <span>00:17</span>
+            <span class="timer__title">ближайший доклад через</span>
+            <span class="timer__time"></span>
         </div>
     </header>
 
@@ -96,5 +81,20 @@
             <ul class="shedule__talks"></ul>
         </section>
     </main>
+
+    <template id="talk-template">
+        <li class="talk">
+            <div class="talk__time">
+                <span class="talk__time-start"></span>
+                <span class="talk__time-separator"></span>
+                <span class="talk__time-end"></span>
+            </div>
+    
+            <div class="talk__body">
+                <h3 class="talk__title"></h3>
+                <p class="talk__description"></p>
+            </div>
+        </li>
+    </template>
 </body>
 </html>

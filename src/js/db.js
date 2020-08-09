@@ -2,7 +2,7 @@ export const DB = {
     talks: [
         {
             time: {
-                start: '10:00',
+                start: '02:00',
                 end: '11:00',
             },
             title: 'Переводим React-приложение на SSR, используя Next.js',
