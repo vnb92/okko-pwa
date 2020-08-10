@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack-dev-server --open --hot --env.mode=development",
     "start-sw": "http-server docs --env.sw",
-    "build": "webpack --env.mode=production"
+    "build": "webpack --env.mode=production",
+    "lint": "npx eslint src/**/*.js --fix"
   },
   "author": "",
   "license": "ISC",
@@ -17,6 +18,9 @@
     "copy-webpack-plugin": "6.0.3",
     "css-loader": "4.2.1",
     "css-minimizer-webpack-plugin": "1.1.0",
+    "eslint": "7.6.0",
+    "eslint-config-airbnb-base": "14.2.0",
+    "eslint-plugin-import": "2.22.0",
     "html-webpack-plugin": "4.3.0",
     "http-server": "0.12.3",
     "husky": "4.2.5",
@@ -29,7 +33,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run build && git add --all"
+      "pre-commit": "npm run lint && npm run build && git add --all"
     }
   }
 }

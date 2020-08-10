@@ -1,0 +1,19 @@
+root: true
+
+env:
+  es6: true
+  browser: true
+
+extends:
+  airbnb-base
+
+parserOptions:
+  ecmaVersion: 2018
+  sourceType: module
+
+rules:
+  no-restricted-globals: off
+  no-console: off
+  import/prefer-default-export: off
+  no-new: off
+  no-use-before-define: off
