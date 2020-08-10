@@ -12,8 +12,6 @@ self.addEventListener('install', (event) => {
     '/pwa-icon.png',
   ];
 
-  // при локальной разработке закоментировать добавляение префикса
-  // TODO: сделать поднять сервер на node с путем /okko-pwa
   const gitRepoPrefix = '/okko-pwa';
   cachedResourseUrls = cachedResourseUrls.map((url) => `${gitRepoPrefix}${url}`);
 

@@ -21,7 +21,6 @@ module.exports = env => ({
   },
   devServer: {
     contentBase: path.join(__dirname, 'src'),
-    writeToDisk: env.sw ? true : false,
     openPage: 'okko-pwa'
   },
   module: {
