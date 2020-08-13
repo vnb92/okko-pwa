@@ -30,7 +30,7 @@ export const initTalksIntersectionObserver = () => {
     threshold: 0.30,
   };
 
-  const callback = (entries, observer) => {
+  const addVisibleClass = (entries, observer) => {
     entries.forEach(({ target, isIntersecting }) => {
       if (!isIntersecting) return;
 
@@ -39,7 +39,7 @@ export const initTalksIntersectionObserver = () => {
     });
   };
 
-  const observer = new IntersectionObserver(callback, options);
+  const observer = new IntersectionObserver(addVisibleClass, options);
 
   const talks = document.querySelectorAll('.talk');
   talks.forEach((talk) => observer.observe(talk));

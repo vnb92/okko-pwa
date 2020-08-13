@@ -7,7 +7,7 @@
     margin: 0 auto;
     padding-bottom: calc(var(--base)*7);
 
-    border-bottom: 8px solid var(--color-purple);
+    border-bottom: calc(var(--base)*2) solid var(--color-purple);
 }
 
 .description__title {

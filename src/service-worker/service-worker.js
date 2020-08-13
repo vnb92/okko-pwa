@@ -10,6 +10,7 @@ self.addEventListener('install', (event) => {
     '/styles.css',
     '/manifest.json',
     '/pwa-icon.png',
+    '/favicon.ico',
   ];
 
   const gitRepoPrefix = '/okko-pwa';
@@ -32,9 +33,7 @@ self.addEventListener('fetch', (event) => {
 function fromCache(request) {
   console.log('SW from cache', request);
 
-  return caches.open(CACHE).then(
-    (cache) => cache.match(request).then(
-      (matching) => matching || Promise.reject('no-match'),
-    ),
-  );
+  return caches.open(CACHE)
+    .then((cache) => cache.match(request)
+      .then((matching) => matching || Promise.reject('no-match')));
 }

@@ -15,22 +15,18 @@
     align-items: center;
 }
 
-.slogan,
-.timer {
-    margin-top: calc(var(--base)*2);
-}
-
 .logo__svg {
     display: block;
     min-width: calc(var(--base)*30);
     max-width: calc(var(--base)*30);
     min-height: calc(var(--base)*12);
     max-height: calc(var(--base)*12);
-
+    
     fill: var(--color-white);
 }
 
 .slogan {
+    margin-top: calc(var(--base)*2);
     text-align: center;
 }
 
@@ -51,14 +47,14 @@
     .logo {
         align-items: flex-start;
     }
-    
-    .slogan {
-        margin-left: calc(var(--base)*5);
-    }
-    
+
     .slogan,
     .timer {
         margin-top: calc(var(--base)*2);
+    }
+
+    .slogan {
+        margin-left: calc(var(--base)*5);
     }
 
     .timer {
